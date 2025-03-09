@@ -14,39 +14,14 @@
             <div class="login">
                 <div class="login_form">
                     <form action="/register" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="csrfmiddlewaretoken"
-                            value="uFAM6rYRqkqc4Y8DjeiCeOYPWWzC5xzTqlGYG48DzEnynXhJDlrQmEIT1b7RNaeE">
+                        {% csrf_token %}
+
+                        {% for field in form %}
                         <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Имя пользователя"
-                                autofocus="" required="" id="id_username">
+                            {{ field }}
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="first_name" class="form-control" placeholder="Ваше имя" required=""
-                                id="id_first_name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="last_name" class="form-control" placeholder="Ваша фамилия"
-                                required="" id="id_last_name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Ваша почта" required=""
-                                id="id_email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password1" class="form-control" placeholder="Пароль"
-                                required="" id="id_password1">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password2" class="form-control"
-                                placeholder="Подтвердите пароль" required="" id="id_password2">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="phone_number" class="form-control" placeholder="Номер телефона"
-                                required="" id="id_phone_number">
-                        </div>
-                        <div class="form-group">
-                            <input type="file" name="photo" class="form-control" id="id_photo">
-                        </div>
+                        {% endfor %}
+
 
                         <button class="btn btn-register" type="submit">Зарегистироваться</button>
                     </form>
@@ -57,7 +32,7 @@
             <div class="register_info">
                 <h2 class="first_visit">Уже есть аккаунт?</h2>
                 <p>Если Вы уже проходили регистрацию, войдите через Ваш аккаунт или восстоновите свой доступ. </p>
-                <a href="/login" class="btn-to_login">Войти</a>
+                <a href="{% url 'login' %}" class="btn-to_login">Войти</a>
             </div>
 
         </div>
