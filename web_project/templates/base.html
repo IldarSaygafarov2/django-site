@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+    <!-- header start -->
+    <header>
+        {% include 'components/header/_nav-header.html' %}
+        {% include 'components/header/_nav-menu-icon.html' %}
+        {% include 'components/header/_header-nav-menu.html' %}
+
+        {% block header_banner %}
+
+        {% endblock %}
+    </header>
+    <!-- header end -->
+
+
+    <!-- Main start -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- Main end -->
+
+    <!-- Footer start -->
+    {% include 'components/_footer.html' %}
+
+
+    <!-- Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
