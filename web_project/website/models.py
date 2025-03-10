@@ -20,3 +20,15 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
+
+
+class Brand(models.Model):
+    name = models.CharField(verbose_name="Название", max_length=100, unique=True)
+    slug = models.SlugField(verbose_name="Слаг")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Бренд"
+        verbose_name_plural = "Бренды"

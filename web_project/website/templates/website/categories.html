@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block title %}
@@ -8,14 +9,16 @@
 {% block content %}
 <div class="content">
     <div class="container">
-        <h2 class="content__title">Смартфоны</h2>
+        <h2 class="content__title">{{ category.name }}</h2>
 
         <div class="list_filter">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="list_label">
                     <div class="brand">
-                        <button class="cat_name" type="button"><span>Бренд</span> <img
-                                src="../image/icons/errow_down.svg" alt=""></button>
+                        <button class="cat_name" type="button">
+                            <span>Бренд</span>
+                            <img src="{% static 'image/icons/errow_down.svg' %}" alt="">
+                        </button>
                         <ul class="list_cat">
                             <li><a class="category" href="#">Samsung</a></li>
                             <li><a class="category" href="#">Apple</a></li>
@@ -27,7 +30,7 @@
 
                     <div class="brand brand1">
                         <button class="cat_name" type="button"><span>Бренд</span> <img
-                                src="../image/icons/errow_down.svg" alt=""></button>
+                                src="{% static 'image/icons/errow_down.svg' %}" alt=""></button>
                         <ul class="list_cat">
                             <li><a class="category" href="#">Чёрный</a></li>
                             <li><a class="category" href="#">Белый</a></li>
@@ -38,7 +41,7 @@
 
                     <div class="brand brand2">
                         <button class="cat_name" type="button"><span>Память</span> <img
-                                src="../image/icons/errow_down.svg" alt=""></button>
+                                src="{% static 'image/icons/errow_down.svg' %}" alt=""></button>
                         <ul class="list_cat">
                             <li><a class="category" href="#">2</a></li>
                             <li><a class="category" href="#">4</a></li>
@@ -49,7 +52,7 @@
 
                     <div class="brand brand3">
                         <button class="cat_name" type="button"><span>Цена</span> <img
-                                src="../image/icons/errow_down.svg" alt=""></button>
+                                src="{% static 'image/icons/errow_down.svg' %}" alt=""></button>
                         <ul class="list_cat">
                             <li><a class="category" href="#">2 000 000</a></li>
                             <li><a class="category" href="#">3 000 000</a></li>
